@@ -39,10 +39,10 @@
                     <input type="text" placeholder="Email, or username" class="inputs">
                 </div>
                 <div>
-                    <button class="modal-btn-nxt">Next</button>
+                    <input type="text" placeholder="Password" class="inputs">
                 </div>
                 <div>
-                    <button class="modal-btn-forgot">Forgot password</button>
+                    <button class="modal-btn-nxt" id="nxt-signin">Next</button>
                 </div>
                 <div>
                     <p>Don’t have an account? <span class="blue">Sign up</span></p>
@@ -50,7 +50,7 @@
             </div>
         </form>
         <!-- create acc modal -->
-        <form class="signup-modal" id="signup-modal">
+        <form class="signup-modal firstpage" id="signup-modal">
             <div class="modal">
                 <div>
                     <h1>Create your account</h1>
@@ -220,11 +220,11 @@
                     </select>
                 </div>
                 <div>
-                    <button class="modal-btn-nxt">Next</button>
+                    <button class="modal-btn-nxt" id="nxt-signup">Next</button>
                 </div>
             </div>
     </form>
-    <form class="signup-modal secondpage">
+    <form class="signup-scndpage" id="passPage">
         <div class="modal">
             <h1>You'll need a password</h1>
             <div class="input-password">
