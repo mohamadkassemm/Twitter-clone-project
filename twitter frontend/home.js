@@ -15,6 +15,7 @@ profile.addEventListener('click',()=>{
 })
 themes.addEventListener('click',()=>{
     body.classList.toggle("black-back")
+    
 })
 
 more.onclick = function() {
