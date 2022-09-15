@@ -20,27 +20,38 @@
             <p class="login-tittle">Happening now</p>
             <p class="login-subtittle">Join Twitter today.</p>
             <p class="label">If you already have an acc:</p>
-            <button class="login-btn">Sign in</button>  
-            <form class="modal-container">
-                    <div>
-                        <h1>Sign in to Twitter</h1>
-                    </div>
-                    <div>
-                        <input type="text" placeholder="Email, or username" class="inputs">
-                    </div>
-                    <div>
-                        <button class="modal-btn-nxt">Next</button>
-                    </div>
-                    <div>
-                        <button class="modal-btn-forgot">Forgot password</button>
-                    </div>
-                    <div>
-                        <p>Don’t have an account? <span class="blue">Sign up</span></p>
-                    </div>
-            </form>
+            <button class="login-btn" id="signin">Sign in</button>  
             <p class="or">or</p>
-            <button class="signup-btn">sign up with mail</button>
-            <form class="modal-container">
+            <button class="signup-btn" id="signup">sign up with mail</button>
+            <p class="footer">By signing up, you agree to the <a class="blue" href="https://twitter.com/en/tos"> Terms of Service</a> and <a class="blue" href="https://twitter.com/en/privacy"> Privacy Policy</a>, including <a class="blue" href="https://help.twitter.com/en/rules-and-policies/twitter-cookies"> Cookie Use</a>.</p>
+            <p class="footer-links">About Help Center Terms of Service Privacy Policy Cookie Policy Accessibility Ads info Blog Status Careers Brand Resources Advertising Marketing  Twitter for Business Developer Directory Settings © 2022 Twitter, Inc.</p>
+        </section>
+        <!-- end of actions section -->
+        <!-- start of modals section -->
+        <!-- siign in modal -->
+        <form class="signin-modal">
+            <div class="modal">
+                <img src="./assets/logo.png" class="modal-logo">
+                <div>
+                    <h1>Sign in to Twitter</h1>
+                </div>
+                <div>
+                    <input type="text" placeholder="Email, or username" class="inputs">
+                </div>
+                <div>
+                    <button class="modal-btn-nxt">Next</button>
+                </div>
+                <div>
+                    <button class="modal-btn-forgot">Forgot password</button>
+                </div>
+                <div>
+                    <p>Don’t have an account? <span class="blue">Sign up</span></p>
+                </div>
+            </div>
+        </form>
+        <!-- create acc modal -->
+        <form class="signup-modal">
+            <div class="modal">
                 <div>
                     <h1>Create your account</h1>
                 </div>
@@ -54,8 +65,8 @@
                     <h6>Date of birth</h6>
                     <p>This will not be shown publicly. Confirm your own age, even if this account is for a business, a pet, or something else.</p>
                 </div>
-                <div>
-                    <select name="dob-month" class="datefield month">
+                <div class="selects">
+                    <select name="dob-month" >
                         <option value="">Month</option>
                         <option value="01">Jan</option>
                         <option value="02">Feb</option>
@@ -70,7 +81,7 @@
                         <option value="11">Nov</option>
                         <option value="12">Dec</option>
                     </select>
-                    <select name="dob-day" class="datefield day">
+                    <select name="dob-day">
                         <option value="">Day</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -104,7 +115,7 @@
                         <option value="30">30</option>
                         <option value="31">31</option>
                     </select>
-                    <select name="dob-year" class="datefield year">
+                    <select name="dob-year">
                         <option value="">Year</option>
                         <option value="2022">2022</option>
                         <option value="2021">2021</option>
@@ -211,11 +222,8 @@
                 <div>
                     <button class="modal-btn-nxt">Next</button>
                 </div>
-                
-        </form>
-            <p class="footer">By signing up, you agree to the <span class="blue"> Terms of Service</span> and <span class="blue"> Privacy Policy</span>, including <span class="blue"> Cookie Use</span>.</p>
-            <p class="footer-links">About Help Center Terms of Service Privacy Policy Cookie Policy Accessibility Ads info Blog Status Careers Brand Resources Advertising Marketing  Twitter for Business Developer Directory Settings © 2022 Twitter, Inc.</p>
-        </section>
-        <!-- end of actions section -->
+            </div>
+    </form>
+        <!-- end of modals section -->
     </body>
 </html>

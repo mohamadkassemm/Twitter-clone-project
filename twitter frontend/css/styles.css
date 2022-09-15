@@ -8,7 +8,7 @@
 }
 .login-img{
     width: 50vw;
-    height: 50vw;
+    height: 100vh;
 }
 .action-section{
     display: flex;
@@ -19,7 +19,7 @@
 }
 .logo{
     width: 5vw;
-    height: 5vw;
+    height: 10vh;
 }
 .login-tittle{
     font-size:5vw;
@@ -45,6 +45,9 @@
     color: #1D9BF0;
     font-size: 15px;
 }
+.login-btn:active{
+    scale: 0.9;
+}
 .signup-btn{
     border-radius: 25px;
     cursor: pointer;
@@ -56,6 +59,9 @@
     padding: 1vh;
     color: white;
     font-size: 15px;
+}
+.signup-btn:active{
+    scale: 0.9;
 }
 .or{
     text-align: center;
@@ -82,21 +88,50 @@
     color: #1D9BF0;
     cursor: pointer;
 }
-.blue:hover{
-    border-bottom: 1px solid #1D9BF0;
-}
+
 
 /* modal section */
-.modal-container{
-    display: flex;
-    display: none;
+.signin-modal{
+    display: none ;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 5px;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.3);
+    top: 0;
+    left: 0;
+}
+.signup-modal{
+    display: flex ;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    padding: 2px;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.3);
+    
 }
 .modal-container > div{
     margin-top: 10px;
+}
+.modal{
+    padding: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    height: 300px;
+    width: 250px;
+    border-radius: 10px;
+}
+.modal-logo{
+    height: 7vh;
+    width: 3.5vw;
 }
 .modal-btn-nxt{
     border-radius: 25px;
@@ -110,11 +145,14 @@
     color: white;
     font-size: 15px;
 }
+.modal-btn-nxt:active{
+    scale: 0.9;
+}
 .modal-btn-forgot{
     border-radius: 25px;
     cursor: pointer;
     background-color: white;
-    border-color: white;
+    border-color: gray;
     width: 20vw;
     margin-top: 1vh;
     margin-bottom: 1vh;
@@ -122,7 +160,14 @@
     color: black;
     font-size: 15px;
 }
+.modal-btn-forgot:active{
+    scale: 0.9;
+}
 .inputs{
     width:20vw;
     padding: 15px;
+    margin: 5px;
+}
+.selects > select{
+    margin: 10px;
 }
