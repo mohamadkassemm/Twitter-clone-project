@@ -1,5 +1,7 @@
 const signin =document.getElementById("signin")
 const signup =document.getElementById("signup")
+const signup2 =document.getElementById("signup2")
+const createAcc= document.getElementById("createAcc")
 const nextSignin =document.getElementById("nxt-signin")
 const nextSignup =document.getElementById("nxt-signup")
 const signinModal=document.getElementById("signin-modal")
@@ -10,10 +12,16 @@ const passPage=document.getElementById("passPage")
 signin.addEventListener("click",()=>{
     signinModal.style.display="flex"
 })
-// after clicking on signin the modal appears
+// after clicking on signup the modal appears
 signup.addEventListener("click",()=>{
     signupModal.style.display="flex"
 })
+
+signup2.addEventListener("click",()=>{
+    signupModal.style.display="flex";
+    signinModal.style.display="none"
+})
+
 // after clicking it shows the pass modal
 nextSignup.onclick= function (event){
     event.preventDefault();
@@ -42,6 +50,10 @@ window.onclick = function(event) {
  }
 //  moves us to home page
  nextSignin.onclick= function (event){
+    event.preventDefault();
+    window.location.replace('home.html')
+} 
+createAcc.onclick= function (event){
     event.preventDefault();
     window.location.replace('home.html')
 } 
