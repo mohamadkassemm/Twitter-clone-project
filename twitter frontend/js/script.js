@@ -1,3 +1,4 @@
+// constants used from html
 const signin =document.getElementById("signin")
 const signup =document.getElementById("signup")
 const signup2 =document.getElementById("signup2")
@@ -7,7 +8,9 @@ const nextSignup =document.getElementById("nxt-signup")
 const signinModal=document.getElementById("signin-modal")
 const signupModal=document.getElementById("signup-modal")
 const passPage=document.getElementById("passPage")
-
+// constant values needed
+const UE = document.getElementById("UserameOrEmail")
+const pass = document.getElementById("pass")
 // after clicking on signin the modal appears
 signin.addEventListener("click",()=>{
     signinModal.style.display="flex"
@@ -51,9 +54,22 @@ window.onclick = function(event) {
 //  moves us to home page
  nextSignin.onclick= function (event){
     event.preventDefault();
-    window.location.replace('home.html')
+    fetch("http://localhost/Twitter%20Team%20Project/twitter%20backend/login.php")
+    .then(res => res.json())
+    .then(data => {
+        for(let i=0;i<data.length;i++){
+            if(UE.value == data[i].username){
+                if(pass.value == data[i].password){
+                    // window.location.replace('home.html')
+                    console.log("success");
+                }
+            }
+        }
+    })
 } 
+
 createAcc.onclick= function (event){
     event.preventDefault();
     window.location.replace('home.html')
 } 
+
