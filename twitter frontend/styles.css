@@ -8,6 +8,7 @@ body{
     /*overflow-x:hidden;*/
 }
 .black-back{
+    color: white;
     background-color: black;
 }
 
@@ -35,6 +36,7 @@ body{
     
 }
 .icon-row{
+    width: 15vw;;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -42,11 +44,20 @@ body{
     padding:5px;
     border-radius: 30px;
     background-color:  white;
-    margin: 10px 0px;
+    margin: 20px 0px;
     cursor: pointer;
 }
+
+#home{
+    padding-left:4px;
+}
+#more{
+    padding-left:5px;
+}
+
+
 .icon-row:hover{
-    background-color:  #E1E8ED;
+   background-color:  #E1E8ED;
 }
 
 i{
@@ -200,7 +211,7 @@ hr{
     width:170px;
     height: 170px;
     left:10%;
-    bottom:5%
+    bottom:0%;
 }
 .edit-profile{
     width:130px;
@@ -221,9 +232,40 @@ hr{
     flex-direction: column;
     padding: 10px 20px 0px 20px;
     box-sizing: border-box;
-
+}
+.follow{
+    align-self: flex-end;
+    position: relative;
 }
 
+.follow-btn{
+    border-radius: 30px;
+    cursor: pointer;
+    margin: 20px 10px 10px 0px;
+    width:120px;
+    height:40px;
+    color:white;
+    background-color: black;
+}
+.follow >i:hover{
+    cursor: pointer;
+}
+
+.block{
+    position: absolute;
+    width:100px;
+    height:30px;
+    left:-25px;
+    bottom:1px;
+    cursor: pointer;
+    background-color:  rgb(207, 217, 222);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    border: none;
+    border-radius: 5px;
+}
 
 @media only screen and (max-width: 900px){
     .title, .search, .fa-search{
@@ -237,7 +279,10 @@ hr{
         margin-right: 65vw;
     }
     .profile-picture{
-        width:120px;
-        height: 120px;
+        width:110px;
+        height: 110px;
+    }
+    .background{
+        height:200px;
     }
 }
