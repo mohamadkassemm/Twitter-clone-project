@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="styles.css">
-
+        
     </head>
-    <body>
+    <body id="body">
         <div class="container">
             <div class="left-nav">
                 <div class="search-twitter">
@@ -34,8 +34,18 @@
                     </div>
                     <div class="icon-row" id="more">
                         <i class="fa fa-ellipsis-h fa-2x"></i>
-                        <p class="title">More</p>
+                        <p class="title">Log Out</p>
                     </div> 
+                    <div id="myModal" class="modal">
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                          <h3>Are you sure you want to log-out?</h3>
+                          <div class="logout-choices">
+                            <button class="cancel-btn" id="cancel-btn">Cancel</button>
+                            <button class="logout-btn" id="logout-btn">Log out</button>
+                          </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="profile">
