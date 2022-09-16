@@ -61,10 +61,11 @@ window.onclick = function(event) {
             if(UE.value == data[i].username){
                 if(pass.value == data[i].password){
                     // window.location.replace('home.html')
-                    console.log("success");
+                    return console.log("success");
                 }
             }
-        }
+        } 
+        console.log("bye");
     })
 } 
 
