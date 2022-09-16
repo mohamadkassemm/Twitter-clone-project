@@ -8,9 +8,11 @@ const nextSignup =document.getElementById("nxt-signup")
 const signinModal=document.getElementById("signin-modal")
 const signupModal=document.getElementById("signup-modal")
 const passPage=document.getElementById("passPage")
+const warning=document.getElementById("warning")
 // constant values needed
 const UE = document.getElementById("UserameOrEmail")
 const pass = document.getElementById("pass")
+
 // after clicking on signin the modal appears
 signin.addEventListener("click",()=>{
     signinModal.style.display="flex"
@@ -65,7 +67,7 @@ window.onclick = function(event) {
                 }
             }
         } 
-        console.log("bye");
+        warning.innerHTML="Please enter valid username and password"
     })
 } 
 
