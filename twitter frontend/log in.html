@@ -48,7 +48,7 @@
         </section>
         <!-- end of actions section -->
         <!-- start of modals section -->
-        <!-- siign in modal -->
+        <!-- sign in modal -->
         <form class="signin-modal" id="signin-modal">
             <div class="modal">
                 <img src="./assets/logo.png" class="modal-logo">
@@ -59,36 +59,35 @@
                     <input type="text" placeholder="Email, or username" class="inputs" id="UserameOrEmail">
                 </div>
                 <div>
-                    <input type="text" placeholder="Password" class="inputs" id="pass">
+                    <input type="password" placeholder="Password" class="inputs" id="pass" >
                 </div>
                 <div>
                     <button class="modal-btn-nxt" id="nxt-signin">Next</button>
                 </div>
                 <div>
                     <p>Don’t have an account? <span class="blue" id="signup2">Sign up</span></p>
-                
                     <p id="warning" class="red"></p>
                 </div>
             </div>
         </form>
         <!-- create acc modal -->
         <form class="signup-modal firstpage" id="signup-modal">
-            <div class="modal">
+            <div class="modal" id="signup-p1">
                 <div>
-                    <h1>Create your account</h1>
+                    <h2>Create your account</h2>
                 </div>
                 <div>
-                    <input type="text" placeholder="Name " class="inputs">
+                    <input type="text" placeholder="Name " class="inputs" id="name">
                 </div>
                 <div>
-                    <input type="text" placeholder="Email " class="inputs">
+                    <input type="text" placeholder="Email " class="inputs" id="email">
                 </div>
                 <div class="footer">
                     <h6>Date of birth</h6>
                     <p>This will not be shown publicly. Confirm your own age, even if this account is for a business, a pet, or something else.</p>
                 </div>
                 <div class="selects">
-                    <select name="dob-month" >
+                    <select name="dob-month" id="dob-month">
                         <option value="">Month</option>
                         <option value="01">Jan</option>
                         <option value="02">Feb</option>
@@ -103,7 +102,7 @@
                         <option value="11">Nov</option>
                         <option value="12">Dec</option>
                     </select>
-                    <select name="dob-day">
+                    <select name="dob-day" id="dob-day">
                         <option value="">Day</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -137,7 +136,7 @@
                         <option value="30">30</option>
                         <option value="31">31</option>
                     </select>
-                    <select name="dob-year">
+                    <select name="dob-year" id="dob-year">
                         <option value="">Year</option>
                         <option value="2022">2022</option>
                         <option value="2021">2021</option>
@@ -244,18 +243,21 @@
                 <div>
                     <button class="modal-btn-nxt" id="nxt-signup">Next</button>
                 </div>
+                <P id="invalid-email">Please enter a valid email</P>
+                <p id="missing-fields">Please fill in all the required fields</p>
             </div>
     </form>
     <form class="signup-scndpage" id="passPage">
-        <div class="modal">
+        <div class="modal" id="signup-p2">
             <h1>You'll need a password</h1>
             <div class="input-password">
                 <h5>Make sure it's 8 characters or more</h5>
-                <input type="text" placeholder="Password " class="inputs">
+                <input type="text" placeholder="username " class="inputs" id="username">
+                <input type="text" placeholder="Password " class="inputs" id="password">
             </div>
-            <div class="selects select-gender">
+            <div class="selects select-gender" >
                 <h5>Select your gender</h5>
-                <select name="gender">
+                <select name="gender" id="gender">
                     <option value="">Gender</option>
                     <option value="01">Male</option>
                     <option value="02">Female</option>
@@ -263,6 +265,9 @@
                 </select>
             </div>
             <button class="modal-btn-nxt" id="createAcc">Create an account</button>
+            <P id="invalid-password">The length of your password must be atleast 8</P>
+            <p id="missing-fields2">Please fill in all the required fields</p>
+            <p id="taken-email">This email is already taken</p>
         </div>
     </form>
         <!-- end of modals section -->

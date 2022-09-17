@@ -1,4 +1,5 @@
 // constants used from html
+
 const signin =document.getElementById("signin")
 const signup =document.getElementById("signup")
 const signup2 =document.getElementById("signup2")
@@ -11,7 +12,8 @@ const passPage=document.getElementById("passPage")
 const warning=document.getElementById("warning")
 // constant values needed
 const UE = document.getElementById("UserameOrEmail")
-const pass = document.getElementById("pass")
+const pass = document.getElementById("pass");
+
 
 // after clicking on signin the modal appears
 signin.addEventListener("click",()=>{
@@ -53,6 +55,7 @@ window.onclick = function(event) {
      }
  
  }
+
 //  moves us to home page
  nextSignin.onclick= function (event){
     event.preventDefault();
@@ -60,14 +63,14 @@ window.onclick = function(event) {
     .then(res => res.json())
     .then(data => {
         for(let i=0;i<data.length;i++){
-            if(UE.value == data[i].username){
-                if(pass.value == data[i].password){
-                    // window.location.replace('home.html')
-                    return console.log("success");
+            if(UE.value == data[i].users_username || UE.value == data[i].users_email ){
+                if(pass.value == data[i].users_password){
+                    warning.innerHTML=""
+                    window.location.replace('home.html')
                 }
             }
         } 
-        warning.innerHTML="Please enter valid username and password"
+        warning.innerHTML="Please enter valid username/email and password"
     })
 } 
 

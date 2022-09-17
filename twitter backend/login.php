@@ -5,7 +5,7 @@ header('Access-Control-Allow-Methods: POST, GET, OPTIONS, PUT, DELETE');
 header('Access-Control-Allow-Headers: Origin, Content-Type, Accept, Authorization, X-Request-With');
 include("connection.php");
 
-$query = $mysqli->prepare("SELECT username,email,password FROM user");
+$query = $mysqli->prepare("SELECT users_email, users_username, users_password FROM users");
 $query->execute();
 $array = $query->get_result();
 

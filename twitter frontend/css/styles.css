@@ -99,9 +99,11 @@
 .blue{
     color: #1D9BF0;
     cursor: pointer;
+    text-decoration: none;
 }
-
-
+.blue:hover{
+    text-decoration: underline;
+}
 /* modal section */
 .signin-modal{
     display: none ;
