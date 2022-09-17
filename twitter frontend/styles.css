@@ -149,7 +149,7 @@ i{
 }
 .tweet-textarea{
     padding: 10px;
-    color: gainsboro;
+    color: black;
     border: 1px solid #E1E8ED;
     border-radius: 30px;
     height: 250px;
@@ -176,6 +176,9 @@ i{
     border: none;
     border-radius: 30px;
     cursor: pointer;
+}
+.submit-tweet:active{
+    scale: 0.9;
 }
 .profile-pic{
     position: absolute;
