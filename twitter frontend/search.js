@@ -5,19 +5,13 @@ const twitter=document.getElementById('twitter')
 const profile=document.getElementById('profile')
 const themes=document.getElementById('themes')
 const more=document.getElementById('more')
-const tweetContents=document.getElementById('tweet-contents')
-const submitTweet=document.getElementById('submit-tweet')
 const body=document.getElementById('body')
 const modal = document.getElementById("myModal");
-<<<<<<< HEAD
-const logOut = document.getElementById("logout-btn");
-const cancel = document.getElementById("cancel-btn");
-
-=======
 const logOut = document.getElementById("logout-btn")
 const cancel = document.getElementById("cancel-btn")
 const searchOutput = document.getElementById('search-output')
->>>>>>> 0c79fc8d7d97ee50ddd81941cc2d96c011695211
+const profilePhoto= document.getElementById('profile-photo')
+const Username= document.getElementById('user-name')
 profile.addEventListener('click',()=>{
     window.location.replace('profile.html')
 })
@@ -38,15 +32,22 @@ window.onclick = function(event) {
       modal.style.display = "none";
     }
 }
+/****************************************************************************/
 
-searchIcon.onclick= ()=>{
-    let userName=search.value
-    let url='http://localhost/twitter-testing/searchusers.php/?users_name='+userName
-    console.log(url)
-    fetch(url)
-    .then(Response => Response.json())
-    .then(data => {
-        localStorage.setItem('data',JSON.stringify(data))
-        window.location.replace('search.html')
-    })  
-}
+const img = new Image()
+img.src = "profile.jpg"
+img.setAttribute('class','profile-pic')
+img.style.position='initial'
+searchOutput.appendChild(img);
+
+
+
+let users=JSON.parse(localStorage.getItem('data'))
+let profileimg= document.createElement('img')
+profileimg.src='profile.jpg'
+searchOutput.appendChild(profilePhoto)
+// for (let i=0; i<users.length;i++){
+//     let user=document.createElement('div')
+//     user.id='user'
+//     user.appendChild(profilePhoto)
+// }
