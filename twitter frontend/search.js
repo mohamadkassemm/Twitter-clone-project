@@ -34,18 +34,27 @@ window.onclick = function(event) {
 }
 /****************************************************************************/
 
+if (localStorage.getItem('data')){
+    let users=JSON.parse(localStorage.getItem('data'))
+    for (let i=0; i<users.length;i++){
+        let img = document.createElement('img')
+        img.src = "profile.jpg"
+        img.setAttribute('class','profile-pic')
+        img.style.position='initial'
+        let para= document.createElement('p')
+        para.setAttribute('class','name-username')
+        searchOutput.appendChild(img)
+        para.innerText= `${users[i].users_name} \n @ ${users[i].users_username} `
+        searchOutput.appendChild(para)
+    }
+}
+// localStorage.removeItem('data')
 
-let users=JSON.parse(localStorage.getItem('data'))
-
-for (let i=0; i<users.length;i++){
-    let img = document.createElement('img')
-    img.src = "profile.jpg"
-    img.setAttribute('class','profile-pic')
-    img.style.position='initial'
-    let para= document.createElement('p')
-    para.setAttribute('class','name-username')
-    para.setAttribute('id','name-username')
-    searchOutput.appendChild(img)
-    para.innerText= `${users[i].users_name} \n @ ${users[i].users_username} `
-    searchOutput.appendChild(para)
+const userNames= document.getElementsByClassName('name-username')
+for (let userName of userNames){
+    userName.onclick= ()=>{
+        let targetUserName=userName.innerHTML.split('@')[1]
+        localStorage.setItem('userProfile', targetUserName)
+        window.location.replace('users-profile.html')
+    }
 }
