@@ -10,6 +10,7 @@ const body=document.getElementById('body')
 const modal = document.getElementById("myModal");
 const logOut = document.getElementById("logout-btn");
 const cancel = document.getElementById("cancel-btn");
+
 profile.addEventListener('click',()=>{
     window.location.replace('profile.html')
 })

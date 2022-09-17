@@ -291,4 +291,47 @@ hr{
     }
 }
 
-/* my profile tweets section */
+/* my feed tweets section */
+.tweets{
+    display: grid;
+}
+.usercard{
+    display: flex;
+    height: 100px;
+    
+}
+.usercard >p{
+    margin-top: 50px;
+}
+.usercard  button{
+    height: 40%;
+    width: fit-content;
+    align-self: center;
+    border-radius: 50px;
+    padding: 10px;
+    cursor: pointer;
+}
+.usercard  button:focus{
+    background-color: black;
+    color: white;
+}
+.left{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+.tweetcontent{
+    margin-top: 15px;
+    padding: 20px;
+}
+.actions{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.actions > i{
+    cursor: pointer;
+}
+.actions > i:active{
+    scale: 0.9;
+}
