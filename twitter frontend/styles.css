@@ -134,7 +134,7 @@ i{
 .fa-search{
     position: absolute;
     top:16%;
-    left:8%;
+    left:8%;    
     z-index: 1;
 }
 
@@ -290,3 +290,5 @@ hr{
         height:200px;
     }
 }
+
+/* my profile tweets section */
