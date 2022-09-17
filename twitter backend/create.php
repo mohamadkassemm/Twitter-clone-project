@@ -10,11 +10,18 @@ $password= hash("sha256", $_POST["password"]);
 $fullname= $_POST["fullname"];
 $birthdate= $_POST["birthdate"];
 $gender= $_POST["gender"];
-date_default_timezone_set("Asia/Beirut");
-$date= date("Y-m-d");
 
-$query = $mysqli->prepare("INSERT INTO users (users_name , users_email, users_username, users_password, users_birthdate, users_created_at, users_gender) VALUE (?, ?, ?, ?, ?, ?, ?)");
-$query->bind_param("sssssss",$fullname, $email, $username, $password, $birthdate, $date, $gender);
+$query = $mysqli->prepare("INSERT INTO users (users_name , users_email, users_username, users_password, users_birthdate, users_gender) VALUE (?, ?, ?, ?, ?, ?)");
+$query->bind_param("ssssss",$fullname, $email, $username, $password, $birthdate, $gender);
 $query->execute();
 
+$query = $mysqli->prepare("SELECT id from users where users_email='".$email."' ");
+$query->execute();
+$array = $query->get_result();
+
+while($a = $array->fetch_assoc()){
+    $response = $a;
+}
+
+echo json_encode($response);
 ?>
