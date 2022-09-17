@@ -138,7 +138,7 @@ createAcc.onclick=(event)=>{
                                     method: 'POST',
                                     body: new URLSearchParams(info)
                                 }
-                                fetch("http://localhost/twitter-testing/create.php",information)
+                                fetch("http://localhost/Twitter%20Team%20Project/twitter%20backend/login.php",information)
                                 .then(Response => Response.json())
                                 .then(data => {
                                     localStorage.setItem('id', data.id)
