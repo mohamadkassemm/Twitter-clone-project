@@ -6,7 +6,7 @@ header('Access-Control-Allow-Headers: Origin, Content-Type, Accept, Authorizatio
 include("connection.php");
 
 $username = $_GET["users_name"];
-$query = $mysqli->prepare("SELECT id, users_username FROM users where users_name='".$username."' ");
+$query = $mysqli->prepare("SELECT id, users_name, users_username FROM users where users_name='".$username."' ");
 $query->execute();
 $array = $query->get_result();
 
