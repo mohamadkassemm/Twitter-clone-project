@@ -46,9 +46,10 @@ if (localStorage.getItem('data')){
         searchOutput.appendChild(img)
         para.innerText= `${users[i].users_name} \n @ ${users[i].users_username} `
         searchOutput.appendChild(para)
+        localStorage.removeItem('data')
     }
 }
-// localStorage.removeItem('data')
+
 
 const userNames= document.getElementsByClassName('name-username')
 for (let userName of userNames){
