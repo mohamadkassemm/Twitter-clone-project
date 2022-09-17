@@ -170,8 +170,6 @@ function validPassword(password){
 }
 /****************************************************************************************************/
 
-
-
 // closing the modal whenever we click outside the border of the modals
 window.onclick = function(event) {
 if (event.target == signinModal) {
