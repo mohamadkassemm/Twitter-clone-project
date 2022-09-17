@@ -10,8 +10,8 @@ const modal = document.getElementById("myModal");
 const logOut = document.getElementById("logout-btn")
 const cancel = document.getElementById("cancel-btn")
 const searchOutput = document.getElementById('search-output')
-const profilePhoto= document.getElementById('profile-photo')
-const Username= document.getElementById('user-name')
+// const profilePhoto= document.getElementById('profile-photo')
+// const Username= document.getElementById('user-name')
 profile.addEventListener('click',()=>{
     window.location.replace('profile.html')
 })
@@ -34,20 +34,18 @@ window.onclick = function(event) {
 }
 /****************************************************************************/
 
-const img = new Image()
-img.src = "profile.jpg"
-img.setAttribute('class','profile-pic')
-img.style.position='initial'
-searchOutput.appendChild(img);
-
-
 
 let users=JSON.parse(localStorage.getItem('data'))
-let profileimg= document.createElement('img')
-profileimg.src='profile.jpg'
-searchOutput.appendChild(profilePhoto)
-// for (let i=0; i<users.length;i++){
-//     let user=document.createElement('div')
-//     user.id='user'
-//     user.appendChild(profilePhoto)
-// }
+
+for (let i=0; i<users.length;i++){
+    let img = document.createElement('img')
+    img.src = "profile.jpg"
+    img.setAttribute('class','profile-pic')
+    img.style.position='initial'
+    let para= document.createElement('p')
+    para.setAttribute('class','name-username')
+    para.setAttribute('id','name-username')
+    searchOutput.appendChild(img)
+    para.innerText= `${users[i].users_name} \n @ ${users[i].users_username} `
+    searchOutput.appendChild(para)
+}
