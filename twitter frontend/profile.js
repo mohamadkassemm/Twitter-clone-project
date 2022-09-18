@@ -23,6 +23,9 @@ themes.addEventListener('click',()=>{
     body.classList.toggle("black-back")
     
 })
+home.onclick=()=>{
+    window.location.replace('home.html')
+}
 console.log(window.localStorage)
 logout.onclick = function() {
     modal.style.display = "block";
@@ -36,7 +39,6 @@ window.onclick = function(event) {
       modal.style.display = "none";
     }
 }
-
 
 logOutBtn.onclick= ()=>{
     localStorage.clear()
@@ -67,8 +69,15 @@ fetch("http://localhost/twitter-testing/gettweets.php",tweetsInfo)
         let para= document.createElement('p')
         para.setAttribute('class','tweet-contents')
         console.log(data[i].tweets_content)
-        para.innerText= `${data[i].tweets_content} \n created at ${data[i].tweets_created_at} `
+        para.innerText= `${data[i].tweets_content} \n`
+        para.style.fontWeight='bold'
         tweets.appendChild(para)
+        let date= document.createElement('p')
+        date.setAttribute('class','tweet-contents')
+        console.log(data[i].tweets_content)
+        date.innerText= `created at ${data[i].tweets_created_at} `
+        date.style.fontSize='12px'        
+        tweets.appendChild(date)
         tweets.appendChild(document.createElement("hr"))
     }
 })
