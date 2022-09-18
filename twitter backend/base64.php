@@ -12,9 +12,20 @@ $query = $mysqli->prepare("INSERT INTO tweets_picture(tweets_tweet_id ,tweets_pi
 $query->bind_param("is", $tweets_tweet_id , $tweets_picture_url);
 $query->execute();
 
-$response = [];
-$response["success"] = true;
+$query = $mysqli->prepare("SELECT tweets_picture_url FROM tweets_picture where tweets_tweet_id= '".$tweets_tweet_id."'");
+$query->execute();
+$array = $query->get_result();
 
-echo json_encode($response);
+$response=[];
+
+while($a = $array->fetch_assoc()){
+    $response[] = $a;
+}
+
+$json = json_encode($response);
+
+$url=base64_decode($tweets_picture_url);
+
+echo($url);
 
 ?>
