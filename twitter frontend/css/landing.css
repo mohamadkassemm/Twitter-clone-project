@@ -7,8 +7,11 @@
     display: flex;
 }
 .login-img{
-    width: 50vw;
+    width:fit-content;
     height: 100vh;
+}
+.login-img img{
+    width: 100%;
 }
 .action-section{
     display: flex;
@@ -210,4 +213,21 @@
     color: red;
     font-size: 13px;
     display: none;
+}
+
+@media screen and (max-width:500px){
+    .login-body{
+        display: grid;
+    }
+
+   .login-img{
+    height: auto;
+   }
+    
+   .action-section .login-tittle{
+    font-size: 50px;
+   }
+   .action-section button{
+    width: fit-content;
+   }
 }
