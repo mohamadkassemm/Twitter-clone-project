@@ -6,7 +6,7 @@ header('Access-Control-Allow-Headers: Origin, Content-Type, Accept, Authorizatio
 include("connection.php");
 
 $users_id = $_POST["users_id"];
-$query = $mysqli->prepare("SELECT distinct (tweet_id) from follow_relations,tweets 
+$query = $mysqli->prepare("SELECT distinct(tweet_id),tweets_content from follow_relations,tweets 
 where follower_id= '".$users_id."' and users_id in (SELECT followed_id from  follow_relations where follower_id='".$users_id."') ");
 $query->execute();
 $array = $query->get_result();
