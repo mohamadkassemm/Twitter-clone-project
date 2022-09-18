@@ -86,5 +86,18 @@ fetch("http://localhost/twitter-testing/getfollowtweets.php",targetTweets)
         tweets.appendChild(document.createElement("hr"))
     }
 })
+
+submitTweet.onclick=()=>{
+
+    if (tweetContents.value!=''){
+        console.log('hello')
+        let tweet={
+            method: 'POST',
+            body: new URLSearchParams({tweets_content:tweetContents.value, users_id: localStorage['id']})   
+        }
+        fetch("http://localhost/twitter-testing/tweet.php",tweet)
+        location.reload()
+    }
+}
     
 
