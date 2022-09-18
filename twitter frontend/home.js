@@ -46,3 +46,8 @@ searchIcon.onclick= ()=>{
     })  
 }
 
+logOutBtn.onclick= ()=>{
+    localStorage.clear()
+    window.location.replace('landing.html')
+}
+

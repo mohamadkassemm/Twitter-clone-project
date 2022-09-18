@@ -6,7 +6,7 @@ header('Access-Control-Allow-Headers: Origin, Content-Type, Accept, Authorizatio
 include("connection.php");
 
 $users_id = $_POST["users_id"];
-$query = $mysqli->prepare("SELECT tweets_content, tweets_created_at from tweets where users_id= '".$users_id."' order by tweets_created_at DESC");
+$query = $mysqli->prepare("SELECT tweet_id, tweets_content, tweets_created_at from tweets where users_id= '".$users_id."' order by tweets_created_at DESC");
 $query->execute();
 $array = $query->get_result();
 

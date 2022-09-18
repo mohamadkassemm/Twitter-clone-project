@@ -33,6 +33,12 @@ window.onclick = function(event) {
       modal.style.display = "none";
     }
 }
+
+
+logOutBtn.onclick= ()=>{
+    localStorage.clear()
+    window.location.replace('landing.html')
+}
 /****************************************************************************/
 
 

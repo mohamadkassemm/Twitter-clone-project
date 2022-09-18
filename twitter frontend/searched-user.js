@@ -37,6 +37,12 @@ window.onclick = function(event) {
     }
 }
 
+
+logOutBtn.onclick= ()=>{
+    localStorage.clear()
+    window.location.replace('landing.html')
+}
+
 // searchIcon.onclick= ()=>{
 //     let userName=search.value
 //     let url='http://localhost/twitter-testing/searchusers.php/?users_name='+userName
