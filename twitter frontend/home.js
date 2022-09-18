@@ -9,15 +9,9 @@ const tweetContents=document.getElementById('tweet-contents')
 const submitTweet=document.getElementById('submit-tweet')
 const body=document.getElementById('body')
 const modal = document.getElementById("myModal");
-<<<<<<< HEAD
-const logOut = document.getElementById("logout-btn");
-const cancel = document.getElementById("cancel-btn");
-
-=======
 const logOut = document.getElementById("logout-btn")
 const cancel = document.getElementById("cancel-btn")
 const searchOutput = document.getElementById('search-output')
->>>>>>> 0c79fc8d7d97ee50ddd81941cc2d96c011695211
 profile.addEventListener('click',()=>{
     window.location.replace('profile.html')
 })
@@ -38,7 +32,7 @@ window.onclick = function(event) {
       modal.style.display = "none";
     }
 }
-
+localStorage.clear()
 searchIcon.onclick= ()=>{
     let userName=search.value
     let url='http://localhost/twitter-testing/searchusers.php/?users_name='+userName
