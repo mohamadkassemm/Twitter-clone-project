@@ -50,7 +50,7 @@ let users=JSON.parse(localStorage.getItem('data'))
 
 for (let i=0; i<users.length;i++){
     let img = document.createElement('img')
-    img.src = "profile.jpg"
+    img.src = "assets/profile.jpg"
     img.setAttribute('class','profile-pic')
     img.style.position='initial'
     let para= document.createElement('p')

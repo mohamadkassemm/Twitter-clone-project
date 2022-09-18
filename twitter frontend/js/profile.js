@@ -14,6 +14,8 @@ const logout =document.getElementById('logout')
 const cancel = document.getElementById("cancel-btn")
 const searchOutput = document.getElementById('search-output')
 const tweets = document.getElementById('tweets')
+
+
 profile.addEventListener('click',()=>{
     window.location.replace('profile.html')
 })
@@ -21,6 +23,9 @@ themes.addEventListener('click',()=>{
     body.classList.toggle("black-back")
     
 })
+home.onclick=()=>{
+    window.location.replace('home.html')
+}
 console.log(window.localStorage)
 logout.onclick = function() {
     modal.style.display = "block";
@@ -34,6 +39,7 @@ window.onclick = function(event) {
       modal.style.display = "none";
     }
 }
+
 logOutBtn.onclick= ()=>{
     localStorage.clear()
     window.location.replace('landing.html')
@@ -41,7 +47,7 @@ logOutBtn.onclick= ()=>{
 
 searchIcon.onclick= ()=>{
     let userName=search.value
-    let url='http://localhost/twitter-testing/searchusers.php/?users_name='+userName
+    let url='http://localhost/Twitter Team Project/twitter backend/searchusers.php/?users_name='+userName
     console.log(url)
     fetch(url)
     .then(Response => Response.json())
@@ -50,54 +56,28 @@ searchIcon.onclick= ()=>{
         window.location.replace('search.html')
     })  
 }
+console.log(localStorage.id)
 
-let targetTweets={
+let tweetsInfo={
     method: 'POST',
-    body: new URLSearchParams({users_id:localStorage['id']})   
+    body: new URLSearchParams({users_id:localStorage.id})   
 }
-fetch("http://localhost/twitter-testing/getfollowtweets.php",targetTweets)
+fetch("http://localhost/Twitter Team Project/twitter backend/gettweets.php",tweetsInfo)
 .then(Response => Response.json())
 .then(data => {
     for (let i=0; i< data.length;i++){
-        let div = document.createElement('div')
-        div.style.display='flex'
-        let img = document.createElement('img')
-        img.src = "profile.jpg"
-        img.setAttribute('class','profile-pic')
-        img.style.position='initial'
-        let name = document.createElement('p')
-        name.setAttribute('class','tweet-contents')
-        name.innerText= `${data[i].users_name}`
-        name.style.fontWeight='bold'
-        div.appendChild(img)
-        div.appendChild(name)
-        div.style.marginTop='25px'
-        tweets.appendChild(div)
         let para= document.createElement('p')
         para.setAttribute('class','tweet-contents')
-        para.innerText= `${data[i].tweets_content}`
-        para.style.fontSize='14px'
-        para.style.marginLeft='15px'
+        console.log(data[i].tweets_content)
+        para.innerText= `${data[i].tweets_content} \n`
+        para.style.fontWeight='bold'
         tweets.appendChild(para)
-        let heart = document.createElement('i')
-        heart.setAttribute('class',"fa fa-thumbs-up")
-        heart.style.marginBottom='25px'
-        tweets.appendChild(heart)
+        let date= document.createElement('p')
+        date.setAttribute('class','tweet-contents')
+        console.log(data[i].tweets_content)
+        date.innerText= `created at ${data[i].tweets_created_at} `
+        date.style.fontSize='12px'        
+        tweets.appendChild(date)
         tweets.appendChild(document.createElement("hr"))
     }
 })
-
-submitTweet.onclick=()=>{
-
-    if (tweetContents.value!=''){
-        console.log('hello')
-        let tweet={
-            method: 'POST',
-            body: new URLSearchParams({tweets_content:tweetContents.value, users_id: localStorage['id']})   
-        }
-        fetch("http://localhost/twitter-testing/tweet.php",tweet)
-        location.reload()
-    }
-}
-    
-

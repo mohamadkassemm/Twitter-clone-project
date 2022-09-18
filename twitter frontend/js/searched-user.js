@@ -46,7 +46,7 @@ logOutBtn.onclick= ()=>{
 
 searchIcon.onclick= ()=>{
     let userName=search.value
-    let url='http://localhost/twitter-testing/searchusers.php/?users_name='+userName
+    let url='http://localhost/Twitter Team Project/twitter backend/searchusers.php/?users_name='+userName
     console.log(url)
     fetch(url)
     .then(Response => Response.json())
@@ -61,7 +61,7 @@ let tweetsInfo={
     method: 'POST',
     body: new URLSearchParams({users_id:localStorage['searched-id']})   
 }
-fetch("http://localhost/twitter-testing/gettweets.php",tweetsInfo)
+fetch("http://localhost/Twitter Team Project/twitter backend/gettweets.php",tweetsInfo)
 .then(Response => Response.json())
 .then(data => {
     for (let i=0; i< data.length;i++){
@@ -79,7 +79,7 @@ fetch("http://localhost/twitter-testing/gettweets.php",tweetsInfo)
                 method: 'POST',
                 body: new URLSearchParams({users_id:localStorage['searched-id'],tweets_tweet_id:data[i].tweet_id})   
             }
-            fetch("http://localhost/twitter-testing/likes.php",likeInfo)
+            fetch("http://localhost/Twitter Team Project/twitter backend/likes.php",likeInfo)
             heart.style.color='blue'
         }
     }
@@ -91,7 +91,7 @@ followButton.onclick= ()=>{
         method: 'POST',
         body: new URLSearchParams({follower_id:localStorage['id'],followed_id:localStorage['searched-id']})   
     }
-    fetch("http://localhost/twitter-testing/follow.php",idsInfo)
+    fetch("http://localhost/Twitter Team Project/twitter backend/follow.php",idsInfo)
     if (followButton.innerText=='follow'){
         followButton.innerText='unfollow'
         followButton.classList.add('unfollow')
@@ -108,7 +108,7 @@ blockbtn.onclick= ()=>{
         method: 'POST',
         body: new URLSearchParams({blocker_id:localStorage['blocker_id'],blocked_id:localStorage['blocked_id']})   
     }
-    fetch("http://localhost/twitter-testing/block.php",blockingInfo)
+    fetch("http://localhost/Twitter Team Project/twitter backend/block.php",blockingInfo)
     if (blockbtn.innerText=='block'){
         blockbtn.innerText='unblock'
         // blockbtn.classList.add('block')
