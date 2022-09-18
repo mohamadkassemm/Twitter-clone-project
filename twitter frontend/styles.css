@@ -239,12 +239,12 @@ hr{
     padding: 10px 20px 0px 20px;
     box-sizing: border-box;
 }
-.follow{
+.follow, .edit{
     align-self: flex-end;
     position: relative;
 }
 
-.follow-btn{
+.follow-btn, .edit-btn{
     border-radius: 30px;
     cursor: pointer;
     margin: 20px 10px 10px 0px;
@@ -252,6 +252,11 @@ hr{
     height:40px;
     color:white;
     background-color: black;
+}
+.edit-btn{
+    color: black;
+    background-color: white;
+    border-color: black;
 }
 .unfollow{
     color:black;

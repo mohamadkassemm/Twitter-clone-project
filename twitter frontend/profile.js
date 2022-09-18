@@ -15,8 +15,8 @@ const searchOutput = document.getElementById('search-output')
 const tweets = document.getElementById('tweets')
 
 
-profile.addEventListener('click',()=>{
-    window.location.replace('profile.html')
+home.addEventListener('click',()=>{
+    window.location.replace('home.html')
 })
 themes.addEventListener('click',()=>{
     body.classList.toggle("black-back")
