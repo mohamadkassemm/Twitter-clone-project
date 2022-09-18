@@ -1,0 +1,213 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+/* Log in page */
+.login-body{
+    display: flex;
+}
+.login-img{
+    width: 50vw;
+    height: 100vh;
+}
+.action-section{
+    display: flex;
+    flex-direction: column;
+    padding-top: 2vh;
+    padding-left: 3.5vw;
+    height: 50vw;
+}
+.logo{
+    width: 5vw;
+    height: 10vh;
+}
+.login-tittle{
+    font-size:60px;
+    font-weight: bolder;
+    font-family: apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    margin-bottom: 3vh;
+}
+.login-subtittle{
+    font-size:25px ;
+    font-weight: bold;
+    font-family: apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    margin-bottom: 3vh;
+}
+.login-btn{
+    border-radius: 25px;
+    cursor: pointer;
+    border-color: lightgrey;
+    background-color: white;
+    width: 20vw;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    padding: 1vh;
+    color: #1D9BF0;
+    font-size: 15px;
+}
+.login-btn:active{
+    scale: 0.9;
+}
+.signup-btn{
+    border-radius: 25px;
+    cursor: pointer;
+    background-color: #1D9BF0;
+    border-color: #1D9BF0;
+    width: 20vw;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    padding: 1vh;
+    color: white;
+    font-size: 15px;
+}
+.signup-btn:active{
+    scale: 0.9;
+}
+.or{
+    text-align: center;
+    width: 20vw;
+}
+.label{
+    font-size: 15px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    margin-bottom: 2vh;
+}
+.footer{
+    font-size: 12px;
+    margin-top:3vh ;
+    width: 25vw;
+}
+.footer-links{
+    font-size: 1vw;
+    margin-top: 10vw;
+    width: 35vw;
+    
+}
+.footer-links a{
+    color: gray;
+    margin: 10px;
+    text-decoration: none;
+    font-size: 12px;
+}
+.footer-links p{
+    color: gray;
+    margin: auto;
+    text-decoration: none;
+    font-size: 12px;
+}
+.blue{
+    color: #1D9BF0;
+    cursor: pointer;
+    text-decoration: none;
+}
+.blue:hover{
+    text-decoration: underline;
+}
+/* modal section */
+.signin-modal{
+    display: none ;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.3);
+    top: 0;
+    left: 0;
+}
+.signup-modal{
+    display: none ;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    padding: 2px;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.3);
+    
+}
+.modal-container > div{
+    margin-top: 10px;
+}
+.modal{
+    padding: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    height: 300px;
+    width: 250px;
+    border-radius: 10px;
+}
+.modal > h1{
+    font-size: 25px;
+}
+.modal-logo{
+    height: 7vh;
+    width: 3.5vw;
+}
+.modal-btn-nxt{
+    border-radius: 25px;
+    cursor: pointer;
+    background-color: black;
+    border-color: white;
+    width: 20vw;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    padding: 1vh;
+    color: white;
+    font-size: 15px;
+}
+.modal-btn-nxt:active{
+    scale: 0.9;
+}
+.modal-btn-forgot{
+    border-radius: 25px;
+    cursor: pointer;
+    background-color: white;
+    border-color: gray;
+    width: 20vw;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    padding: 1vh;
+    color: black;
+    font-size: 15px;
+}
+.modal-btn-forgot:active{
+    scale: 0.9;
+}
+.inputs{
+    width:20vw;
+    padding: 15px;
+    margin: 5px;
+}
+
+.select-gender{
+    display: flex;
+    flex-direction: column;
+}
+.selects > select{
+    margin: 8px;
+}
+.input-password{
+    display: flex;
+    flex-direction: column;
+}
+.signup-scndpage{
+    display: none ;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    padding: 2px;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.3);
+}
+.red{
+    color: red;
+}
