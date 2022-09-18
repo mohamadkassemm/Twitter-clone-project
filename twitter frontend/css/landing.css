@@ -99,11 +99,9 @@
 .blue{
     color: #1D9BF0;
     cursor: pointer;
-    text-decoration: none;
 }
-.blue:hover{
-    text-decoration: underline;
-}
+
+
 /* modal section */
 .signin-modal{
     display: none ;
@@ -208,6 +206,8 @@
     height: 100vh;
     background-color: rgba(0,0,0,0.3);
 }
-.red{
+#invalid-email, #missing-fields, #invalid-password, #missing-fields2, #taken-email, #invalid-usernm{
     color: red;
+    font-size: 13px;
+    display: none;
 }

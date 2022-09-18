@@ -38,7 +38,7 @@ signin.addEventListener("click",()=>{
     signinModal.style.display="flex"
 })
 
-localStorage.clear()
+
 
 console.log(window.localStorage)
 //  moves us to home page
@@ -55,8 +55,8 @@ console.log(window.localStorage)
         .then(data => {
             if (data.valid){
                 console.log(data.id)
-                console.log("success")
                 localStorage.setItem('id', data.id)
+                console.log(localStorage)
                 window.location.replace('home.html')
             }
             else{
@@ -98,7 +98,7 @@ nextSignup.onclick= (event)=>{
 
 //Check if the email has the right format (by Nour)
 function validEmail(email){
-    let valid =/^([a-z0-9A-Z.-_*$~]{3,})+[@]+([a-z])+[.]+([a-z])*$/
+    let valid =/^([a-z0-9A-Z.-_*$~#%?]{3,})+[@]+([a-z])+[.]+([a-z])*$/
     console.log (valid.test(email))
     return (valid.test(email))
 }
@@ -138,7 +138,7 @@ createAcc.onclick=(event)=>{
                                     method: 'POST',
                                     body: new URLSearchParams(info)
                                 }
-                                fetch("http://localhost/Twitter%20Team%20Project/twitter%20backend/login.php",information)
+                                fetch("http://localhost/twitter-testing/create.php",information)
                                 .then(Response => Response.json())
                                 .then(data => {
                                     localStorage.setItem('id', data.id)
@@ -170,6 +170,8 @@ function validPassword(password){
 }
 /****************************************************************************************************/
 
+
+
 // closing the modal whenever we click outside the border of the modals
 window.onclick = function(event) {
 if (event.target == signinModal) {
@@ -183,3 +185,4 @@ if (event.target == signinModal) {
     }
 
 }
+   
