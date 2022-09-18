@@ -20,6 +20,10 @@ themes.addEventListener('click',()=>{
     body.classList.toggle("black-back")
     
 })
+home.onclick=()=>{
+    window.location.replace('home.html')
+}
+
 console.log(window.localStorage)
 logout.onclick = function() {
     modal.style.display = "block";

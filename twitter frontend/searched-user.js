@@ -30,7 +30,9 @@ logout.onclick = function() {
 cancel.onclick = function() {
     modal.style.display = "none";
 }
-
+home.onclick=()=>{
+    window.location.replace('home.html')
+}
 window.onclick = function(event) {
     if (event.target == modal) {
       modal.style.display = "none";
