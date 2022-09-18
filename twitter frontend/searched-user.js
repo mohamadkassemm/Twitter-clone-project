@@ -15,7 +15,7 @@ const cancel = document.getElementById("cancel-btn")
 const searchOutput = document.getElementById('search-output')
 const tweets = document.getElementById('tweets')
 const followButton = document.getElementById('follow-btn')
-
+const blockbtn= document.getElementById('block-btn')
 profile.addEventListener('click',()=>{
     localStorage.removeItem('searched-id')
     window.location.replace('profile.html')
