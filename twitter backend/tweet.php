@@ -8,7 +8,7 @@ include("connection.php");
 $tweets_content = $_POST["tweets_content"];
 $usersid = $_POST["usersid"];
 
-$query = $mysqli->prepare("INSERT INTO tweets(tweets_content,users_id) VALUE (?,?)");
+$query = $mysqli->prepare("INSERT INTO tweets(tweets_content,users_id) VALUE(?,?)");
 $query->bind_param("si", $tweets_content, $usersid);
 $query->execute();
 
