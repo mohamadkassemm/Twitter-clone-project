@@ -185,4 +185,3 @@ if (event.target == signinModal) {
     }
 
 }
-   
