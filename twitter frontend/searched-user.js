@@ -37,23 +37,22 @@ window.onclick = function(event) {
     }
 }
 
-
 logOutBtn.onclick= ()=>{
     localStorage.clear()
     window.location.replace('landing.html')
 }
 
-// searchIcon.onclick= ()=>{
-//     let userName=search.value
-//     let url='http://localhost/twitter-testing/searchusers.php/?users_name='+userName
-//     console.log(url)
-//     fetch(url)
-//     .then(Response => Response.json())
-//     .then(data => {
-//         localStorage.setItem('data',JSON.stringify(data))
-//         window.location.replace('search.html')
-//     })  
-// }
+searchIcon.onclick= ()=>{
+    let userName=search.value
+    let url='http://localhost/twitter-testing/searchusers.php/?users_name='+userName
+    console.log(url)
+    fetch(url)
+    .then(Response => Response.json())
+    .then(data => {
+        localStorage.setItem('data',JSON.stringify(data))
+        window.location.replace('search.html')
+    })  
+}
 console.log(localStorage['searched-id'])
 console.log(localStorage)
 let tweetsInfo={
@@ -65,11 +64,22 @@ fetch("http://localhost/twitter-testing/gettweets.php",tweetsInfo)
 .then(data => {
     for (let i=0; i< data.length;i++){
         let para= document.createElement('p')
+        let heart = document.createElement('i')
+        heart.setAttribute('class',"fa fa-thumbs-up")
         para.setAttribute('class','tweet-contents')
         console.log(data[i].tweets_content)
         para.innerText= `${data[i].tweets_content} \n created at ${data[i].tweets_created_at} `
         tweets.appendChild(para)
+        tweets.appendChild(heart)
         tweets.appendChild(document.createElement("hr"))
+        heart.onclick=()=>{
+            let likeInfo={
+                method: 'POST',
+                body: new URLSearchParams({users_id:localStorage['searched-id'],tweets_tweet_id:data[i].tweet_id})   
+            }
+            fetch("http://localhost/twitter-testing/likes.php",likeInfo)
+            heart.style.color='blue'
+        }
     }
 })
 
@@ -96,7 +106,7 @@ blockbtn.onclick= ()=>{
         method: 'POST',
         body: new URLSearchParams({blocker_id:localStorage['blocker_id'],blocked_id:localStorage['blocked_id']})   
     }
-    fetch("http://localhost/Twitter Team Project/twitter backend/block.php",blockingInfo)
+    fetch("http://localhost/twitter-testing/block.php",blockingInfo)
     if (blockbtn.innerText=='block'){
         blockbtn.innerText='unblock'
         // blockbtn.classList.add('block')

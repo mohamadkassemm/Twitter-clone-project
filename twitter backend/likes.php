@@ -8,8 +8,8 @@ $users_id=$_POST["users_id"];
 $tweets_tweet_id=$_POST["tweets_tweet_id"];
 
 
-$query = $mysqli->prepare("INSERT INTO likes (users_id , tweets_tweet_id) VALUE (?, ?)");
-$query->bind_param("ii",$users_id, $tweets_tweet_id);
+$query = $mysqli->prepare("INSERT INTO likes(users_id,tweets_tweet_id) VALUE (?,?)");
+$query->bind_param("ii", $users_id, $tweets_tweet_id);
 $query->execute();
 
 $response=[];
