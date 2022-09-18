@@ -53,7 +53,7 @@ let tweetsInfo={
     method: 'POST',
     body: new URLSearchParams({users_id:localStorage.id})   
 }
-fetch("http://localhost/twitter-testing/gettweets.php",tweetsInfo)
+fetch("http://localhost/Twitter Team Project/twitter backend/gettweets.php",tweetsInfo)
 .then(Response => Response.json())
 .then(data => {
     for (let i=0; i< data.length;i++){

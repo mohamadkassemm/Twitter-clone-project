@@ -14,6 +14,7 @@ const cancel = document.getElementById("cancel-btn")
 const searchOutput = document.getElementById('search-output')
 const tweets = document.getElementById('tweets')
 const followButton = document.getElementById('follow-btn')
+const blockbtn = document.getElementById('blockbtn')
 
 profile.addEventListener('click',()=>{
     window.location.replace('profile.html')
@@ -53,7 +54,7 @@ let tweetsInfo={
     method: 'POST',
     body: new URLSearchParams({users_id:localStorage['searched-id']})   
 }
-fetch("http://localhost/twitter-testing/gettweets.php",tweetsInfo)
+fetch("http://localhost/Twitter Team Project/twitter backend/gettweets.php",tweetsInfo)
 .then(Response => Response.json())
 .then(data => {
     for (let i=0; i< data.length;i++){
@@ -72,7 +73,7 @@ followButton.onclick= ()=>{
         method: 'POST',
         body: new URLSearchParams({follower_id:localStorage['id'],followed_id:localStorage['searched-id']})   
     }
-    fetch("http://localhost/twitter-testing/follow.php",idsInfo)
+    fetch("http://localhost/Twitter Team Project/twitter backend/follow.php",idsInfo)
     if (followButton.innerText=='follow'){
         followButton.innerText='unfollow'
         followButton.classList.add('unfollow')
@@ -80,5 +81,22 @@ followButton.onclick= ()=>{
     else{
         followButton.innerText='follow'
         followButton.classList.remove('unfollow')
+    }
+}
+
+console.log(blockbtn.innerText)
+blockbtn.onclick= ()=>{
+    console.log("hi")
+    let blockingInfo={
+        method: 'POST',
+        body: new URLSearchParams({blocker_id:localStorage['blocker_id'],blocked_id:localStorage['blocked_id']})   
+    }
+    fetch("http://localhost/Twitter Team Project/twitter backend/block.php",blockingInfo)
+    if (blockbtn.innerText=='block'){
+        blockbtn.innerText='unblock'
+        // blockbtn.classList.add('block')
+    }else{
+        blockbtn.innerText='block'
+        // blockbtn.classList.remove('block')
     }
 }

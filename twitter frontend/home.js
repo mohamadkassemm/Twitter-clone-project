@@ -35,7 +35,7 @@ window.onclick = function(event) {
 localStorage.clear()
 searchIcon.onclick= ()=>{
     let userName=search.value
-    let url='http://localhost/twitter-testing/searchusers.php/?users_name='+userName
+    let url='http://localhost/Twitter Team Project/twitter backend/searchusers.php/?users_name='+userName
     console.log(url)
     fetch(url)
     .then(Response => Response.json())

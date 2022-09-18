@@ -239,12 +239,16 @@ hr{
     padding: 10px 20px 0px 20px;
     box-sizing: border-box;
 }
-.follow, .edit{
+.follow{
+    display: flex;
+    flex-direction: row;
+    align-self:flex-end;
+}
+.edit{
     align-self: flex-end;
     position: relative;
 }
-
-.follow-btn, .edit-btn{
+.followbtn, .edit-btn{
     border-radius: 30px;
     cursor: pointer;
     margin: 20px 10px 10px 0px;
@@ -278,7 +282,6 @@ hr{
     display: flex;
     justify-content: center;
     align-items: center;
-    display: none;
     border: none;
     border-radius: 5px;
 }
