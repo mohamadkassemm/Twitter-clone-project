@@ -13,6 +13,7 @@ const logOutBtn = document.getElementById("logout-btn")
 const logout =document.getElementById('logout')
 const cancel = document.getElementById("cancel-btn")
 const searchOutput = document.getElementById('search-output')
+const tweets = document.getElementById('tweets')
 profile.addEventListener('click',()=>{
     window.location.replace('profile.html')
 })
@@ -33,6 +34,10 @@ window.onclick = function(event) {
       modal.style.display = "none";
     }
 }
+logOutBtn.onclick= ()=>{
+    localStorage.clear()
+    window.location.replace('landing.html')
+}
 
 searchIcon.onclick= ()=>{
     let userName=search.value
@@ -46,8 +51,40 @@ searchIcon.onclick= ()=>{
     })  
 }
 
-logOutBtn.onclick= ()=>{
-    localStorage.clear()
-    window.location.replace('landing.html')
+let targetTweets={
+    method: 'POST',
+    body: new URLSearchParams({users_id:localStorage['id']})   
 }
+fetch("http://localhost/twitter-testing/getfollowtweets.php",targetTweets)
+.then(Response => Response.json())
+.then(data => {
+    for (let i=0; i< data.length;i++){
+        let div = document.createElement('div')
+        div.style.display='flex'
+        let img = document.createElement('img')
+        img.src = "profile.jpg"
+        img.setAttribute('class','profile-pic')
+        img.style.position='initial'
+        let name = document.createElement('p')
+        name.setAttribute('class','tweet-contents')
+        name.innerText= `${data[i].users_name}`
+        name.style.fontWeight='bold'
+        div.appendChild(img)
+        div.appendChild(name)
+        div.style.marginTop='25px'
+        tweets.appendChild(div)
+        let para= document.createElement('p')
+        para.setAttribute('class','tweet-contents')
+        para.innerText= `${data[i].tweets_content}`
+        para.style.fontSize='14px'
+        para.style.marginLeft='15px'
+        tweets.appendChild(para)
+        let heart = document.createElement('i')
+        heart.setAttribute('class',"fa fa-thumbs-up")
+        heart.style.marginBottom='25px'
+        tweets.appendChild(heart)
+        tweets.appendChild(document.createElement("hr"))
+    }
+})
+    
 
