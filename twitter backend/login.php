@@ -17,7 +17,6 @@ while($a = $array->fetch_assoc()){
     $response[] = $a;
 }
 
-
 if ($response==[]){
     $result['valid']=False;
     $result['id']= Null;
