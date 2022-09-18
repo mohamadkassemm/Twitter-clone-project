@@ -13,7 +13,7 @@ const logOut = document.getElementById("logout-btn")
 const cancel = document.getElementById("cancel-btn")
 const searchOutput = document.getElementById('search-output')
 const tweets = document.getElementById('tweets')
-
+const followButton = document.getElementById('follow-btn')
 
 profile.addEventListener('click',()=>{
     window.location.replace('profile.html')
@@ -65,3 +65,20 @@ fetch("http://localhost/twitter-testing/gettweets.php",tweetsInfo)
         tweets.appendChild(document.createElement("hr"))
     }
 })
+
+console.log(followButton.innerText)
+followButton.onclick= ()=>{
+    let idsInfo={
+        method: 'POST',
+        body: new URLSearchParams({follower_id:localStorage['id'],followed_id:localStorage['searched-id']})   
+    }
+    fetch("http://localhost/twitter-testing/follow.php",idsInfo)
+    if (followButton.innerText=='follow'){
+        followButton.innerText='unfollow'
+        followButton.classList.add('unfollow')
+    }
+    else{
+        followButton.innerText='follow'
+        followButton.classList.remove('unfollow')
+    }
+}
