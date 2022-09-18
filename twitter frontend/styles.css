@@ -273,6 +273,54 @@ hr{
     border-radius: 5px;
 }
 
+.tweets{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.tweet-contents{
+    margin: 10px;
+}
+/***********************************************************************/
+.search-results{
+    display: flex;
+    flex-direction: column;
+}
+.display-results{
+    width: 700px;
+    margin: 20px;
+    padding-left: 50px;
+}
+.fa-search-results{
+    top:40%;
+    left:20px;
+    z-index: 1;
+}
+.people{
+    margin:20px 25px;
+    font-weight: bold;
+    font-size: 17px;
+
+}
+
+.search-section{
+    display: flex;
+    flex-direction: column;
+}
+.search-output{
+    padding:20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.name-username{
+    margin: 5px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    cursor: pointer;
+}
+/*********************************************************/
+
 @media only screen and (max-width: 900px){
     .title, .search, .fa-search{
         display: none;
@@ -292,7 +340,7 @@ hr{
 }
 
 /* my feed tweets section */
-.tweets{
+.feed-tweets{
     display: grid;
 }
 .usercard{
