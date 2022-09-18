@@ -253,6 +253,11 @@ hr{
     color:white;
     background-color: black;
 }
+.unfollow{
+    color:black;
+    background-color: white;
+    border-color: black;
+}
 .follow >i:hover{
     cursor: pointer;
 }
