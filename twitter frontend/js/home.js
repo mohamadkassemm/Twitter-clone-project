@@ -36,7 +36,7 @@ window.onclick = function(event) {
 }
 logOutBtn.onclick= ()=>{
     localStorage.clear()
-    window.location.replace('landing.html')
+    window.location.replace('log in.html')
 }
 
 searchIcon.onclick= ()=>{

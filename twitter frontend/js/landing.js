@@ -50,14 +50,14 @@ console.log(window.localStorage)
             body: new URLSearchParams({email:UE.value, password:pass.value})   
         }
         console.log(pass.value)
-        fetch("http://localhost/twitter-testing/login-2.php",loginInfo)
+        fetch("http://localhost/Twitter Team Project/twitter backend/login.php",loginInfo)
         .then(Response => Response.json())
         .then(data => {
             if (data.valid){
                 console.log(data.id)
                 localStorage.setItem('id', data.id)
                 console.log(localStorage)
-                window.location.replace('home.html')
+                window.location.replace("twitter fronend/home.html")
             }
             else{
                 warning.innerHTML="Please enter valid username and password"
@@ -119,7 +119,7 @@ createAcc.onclick=(event)=>{
                 method: 'POST',
                 body: new URLSearchParams({email:email.value,})
             }
-            fetch("http://localhost/twitter-testing/valid-email.php",emailinfo)
+            fetch("http://localhost/Twitter Team Project/twitter backend/valid-email.php",emailinfo)
             .then(Response => Response.json())
             .then(data => {
                 if (data.valid){ //email data
@@ -128,7 +128,7 @@ createAcc.onclick=(event)=>{
                         method: 'POST',
                         body: new URLSearchParams({username:userName.value,})
                     }
-                    fetch("http://localhost/twitter-testing/valid-username.php",usernameinfo)
+                    fetch("http://localhost/Twitter Team Project/twitter backend/valid-username.php",usernameinfo)
                     .then(Response => Response.json())
                     .then(data => {
                         console.log(data)
@@ -138,12 +138,12 @@ createAcc.onclick=(event)=>{
                                     method: 'POST',
                                     body: new URLSearchParams(info)
                                 }
-                                fetch("http://localhost/twitter-testing/create.php",information)
+                                fetch("http://localhost/Twitter Team Project/twitter backend/create.php",information)
                                 .then(Response => Response.json())
                                 .then(data => {
                                     localStorage.setItem('id', data.id)
                                     console.log(data.id)
-                                    window.location.replace('home.html')
+                                    window.location.replace('http://localhost/Twitter Team Project/twitter fronend/home.html')
                                 })
                             }
                             else{
