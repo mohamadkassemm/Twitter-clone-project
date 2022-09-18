@@ -84,7 +84,15 @@ fetch("http://localhost/Twitter Team Project/twitter backend/getfollowtweets.php
         heart.style.marginBottom='25px'
         tweets.appendChild(heart)
         tweets.appendChild(document.createElement("hr"))
-    }
+        heart.onclick=()=>{ 
+            let likeInfo={
+                method: 'POST',
+                body: new URLSearchParams({users_id:localStorage['id'],tweets_tweet_id:data[i].tweet_id})   
+            }
+            fetch("http://localhost/Twitter Team Project/twitter backend/likes.php",likeInfo)
+            heart.style.color='blue'
+        }
+   }
 })
 
 submitTweet.onclick=()=>{

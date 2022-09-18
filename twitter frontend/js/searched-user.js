@@ -77,7 +77,7 @@ fetch("http://localhost/Twitter Team Project/twitter backend/gettweets.php",twee
         heart.onclick=()=>{
             let likeInfo={
                 method: 'POST',
-                body: new URLSearchParams({users_id:localStorage['searched-id'],tweets_tweet_id:data[i].tweet_id})   
+                body: new URLSearchParams({users_id:localStorage['id'],tweets_tweet_id:data[i].tweet_id})   
             }
             fetch("http://localhost/Twitter Team Project/twitter backend/likes.php",likeInfo)
             heart.style.color='blue'
