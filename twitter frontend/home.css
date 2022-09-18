@@ -241,14 +241,13 @@ hr{
 }
 .follow{
     display: flex;
-    flex-direction: row;
-    align-self:flex-end;
+    align-self: flex-end;
 }
 .edit{
     align-self: flex-end;
     position: relative;
 }
-.followbtn, .edit-btn{
+.followbtn, .edit-btn, .block{
     border-radius: 30px;
     cursor: pointer;
     margin: 20px 10px 10px 0px;
@@ -269,21 +268,6 @@ hr{
 }
 .follow >i:hover{
     cursor: pointer;
-}
-
-.block{
-    position: absolute;
-    width:100px;
-    height:30px;
-    left:-25px;
-    bottom:1px;
-    cursor: pointer;
-    background-color:  rgb(207, 217, 222);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    border-radius: 5px;
 }
 
 .tweets{

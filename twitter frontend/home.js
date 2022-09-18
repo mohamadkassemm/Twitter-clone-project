@@ -9,7 +9,8 @@ const tweetContents=document.getElementById('tweet-contents')
 const submitTweet=document.getElementById('submit-tweet')
 const body=document.getElementById('body')
 const modal = document.getElementById("myModal");
-const logOut = document.getElementById("logout-btn")
+const logOutBtn = document.getElementById("logout-btn")
+const logout =document.getElementById('logout')
 const cancel = document.getElementById("cancel-btn")
 const searchOutput = document.getElementById('search-output')
 profile.addEventListener('click',()=>{
@@ -20,7 +21,7 @@ themes.addEventListener('click',()=>{
     
 })
 console.log(window.localStorage)
-more.onclick = function() {
+logout.onclick = function() {
     modal.style.display = "block";
 }
 cancel.onclick = function() {
@@ -32,10 +33,10 @@ window.onclick = function(event) {
       modal.style.display = "none";
     }
 }
-localStorage.clear()
+
 searchIcon.onclick= ()=>{
     let userName=search.value
-    let url='http://localhost/Twitter Team Project/twitter backend/searchusers.php/?users_name='+userName
+    let url='http://localhost/twitter-testing/searchusers.php/?users_name='+userName
     console.log(url)
     fetch(url)
     .then(Response => Response.json())
@@ -44,3 +45,4 @@ searchIcon.onclick= ()=>{
         window.location.replace('search.html')
     })  
 }
+

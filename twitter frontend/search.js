@@ -7,7 +7,8 @@ const themes=document.getElementById('themes')
 const more=document.getElementById('more')
 const body=document.getElementById('body')
 const modal = document.getElementById("myModal");
-const logOut = document.getElementById("logout-btn")
+const logOutBtn = document.getElementById("logout-btn")
+const logout =document.getElementById('logout')
 const cancel = document.getElementById("cancel-btn")
 const searchOutput = document.getElementById('search-output')
 // const profilePhoto= document.getElementById('profile-photo')
@@ -20,7 +21,7 @@ themes.addEventListener('click',()=>{
     
 })
 console.log(window.localStorage)
-more.onclick = function() {
+logout.onclick = function() {
     modal.style.display = "block";
 }
 cancel.onclick = function() {

@@ -9,21 +9,22 @@ const tweetContents=document.getElementById('tweet-contents')
 const submitTweet=document.getElementById('submit-tweet')
 const body=document.getElementById('body')
 const modal = document.getElementById("myModal");
-const logOut = document.getElementById("logout-btn")
+const logOutBtn = document.getElementById("logout-btn")
+const logout =document.getElementById('logout')
 const cancel = document.getElementById("cancel-btn")
 const searchOutput = document.getElementById('search-output')
 const tweets = document.getElementById('tweets')
 
 
-home.addEventListener('click',()=>{
-    window.location.replace('home.html')
+profile.addEventListener('click',()=>{
+    window.location.replace('profile.html')
 })
 themes.addEventListener('click',()=>{
     body.classList.toggle("black-back")
     
 })
 console.log(window.localStorage)
-more.onclick = function() {
+logout.onclick = function() {
     modal.style.display = "block";
 }
 cancel.onclick = function() {
@@ -53,7 +54,7 @@ let tweetsInfo={
     method: 'POST',
     body: new URLSearchParams({users_id:localStorage.id})   
 }
-fetch("http://localhost/Twitter Team Project/twitter backend/gettweets.php",tweetsInfo)
+fetch("http://localhost/twitter-testing/gettweets.php",tweetsInfo)
 .then(Response => Response.json())
 .then(data => {
     for (let i=0; i< data.length;i++){
