@@ -12,9 +12,13 @@ $query = $mysqli->prepare("INSERT INTO block_relations(blocker_id,blocked_id) VA
 $query->bind_param("ii", $blocker_id, $blocked_id);
 $query->execute();
 
-$query2 = $mysqli->prepare("DELETE FROM follow_relations where follower_id = `$blocker_id` and followed_id=`$blocked_id`");
+$query2 = $mysqli->prepare("DELETE FROM follow_relations where follower_id =? and followed_id=?");
+$query2->bind_param("ii", $blocker_id, $blocked_id);
 $query2->execute();
-$array = $query2->get_result();  
+
+$query3 = $mysqli->prepare("DELETE FROM follow_relations where follower_id =? and followed_id=?");
+$query3->bind_param("ii", $blocked_id, $blocker_id);
+$query3->execute();
 
 $response = [];
 $response["success"] = true;
